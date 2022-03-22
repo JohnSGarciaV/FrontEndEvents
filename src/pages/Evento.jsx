@@ -147,7 +147,7 @@ const Evento = () => {
 
             <div style={{ justifyContent: "center", display: "flex", width: "100%", paddingTop: "5vh" }}>
 
-                <Card style={{ height: "30vh", width: "50%" }}>
+                <Card style={{ height: "35vh", width: "80%" }}>
                     <div style={{ paddingBottom: "20px", paddingTop: "15px", textAlign: "center" }}>
                         <h4>Inscribirse en la actividad</h4>
                     </div>
