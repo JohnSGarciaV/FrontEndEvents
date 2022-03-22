@@ -11,7 +11,7 @@ class Calendario extends Component {
         this.state = {
             actividades: [],
             eventos: [],
-            localizer: momentLocalizer(moment)
+            localizer: momentLocalizer(moment),
         }
     }
 
@@ -39,6 +39,10 @@ class Calendario extends Component {
         readEvents();
     }
 
+    showEvent= (event)=> {
+            this.props.history.push('/evento',{params: this.state.actividades[event]});
+    }
+
     render() {
         return (
             <div style={{ justifyContent: "center", alignItems:"center", display:"flex", paddingTop:"10vh" }}>
@@ -47,7 +51,7 @@ class Calendario extends Component {
                  startAccessor="start" 
                  endAccessor="end" 
                  style={{ width: "80%", height: "80vh" }} 
-                    //onSelectEvent={(event) => { showEvent(event.index) }}
+                    onSelectEvent={(event) => { this.showEvent(event.index)}}
                     eventPropGetter={(event) => {
                       const backgroundColor = this.state.actividades[event.index].tipo === "Voluntariado" ? 'green' : 'blue';
                       return { style: { backgroundColor } }
